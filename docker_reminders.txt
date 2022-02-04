@@ -1,0 +1,39 @@
+# To get the image from docker hub: 
+> docker image pull gvrocha/pyml_containers:pytorch1.9
+
+# To run the image as an interactive container: 
+> docker container run -it gvrocha/pyml_containers:pytorch1.9 /bin/bash
+
+# To build an image from a specific Dockerfile (-f) with a specific tag (-t):
+> docker image build -t gvrocha/pyml_containers:pytorch1.9-esm -f ./py3-pytorch1.9-esm/Dockerfile .
+
+# List local images: 
+> docker container ls
+
+# List all local images: 
+> docker container ls -a
+
+# List local containers: 
+> docker container ls
+
+# List local containers (including those stopped): 
+> docker container ls -a
+	
+# Remove specific containers: 
+> docker container rm <container_IDs OR container NAMES separated by space> 
+
+# Remove specific images: 
+> docker image rm <image_tag> 
+	
+# Tag a local image and push it to docker hub 
+> docker image tag pyml_containers:pytorch1.9-esm gvrocha/pyml_containers:pytorch1.9-esm
+> docker image push gvrocha/pyml_containers:pytorch1.9-esm
+
+# Build a Singularity image from Docker hub
+singularity build /users/gvrocha/containers/pytorch1.9-esm.simg docker://gvrocha/pyml_containers:pytorch1.9-esm
+
+# Other useful commands:
+> docker system df
+
+# Discard unused files:
+> docker image prune
