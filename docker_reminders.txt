@@ -32,8 +32,14 @@
 # Build a Singularity image from Docker hub
 singularity build /users/gvrocha/containers/pytorch1.9-esm.simg docker://gvrocha/pyml_containers:pytorch1.9-esm
 
-# Once Singularity image is built
+# Once Singularity image is built, it can be run interactively
 singularity run --containall -B /a_host_directory:/path_to_host_directory_in_container /users/gvrocha/containers/pytorch1.9-esm.simg 
+
+# Once Singularity image is built, commands may be dispatched to it
+singularity run --containall -B /users/gvrocha/dev:/aaa pytorch1.9-esm.simg ls -l /aaa
+
+# This contains some interesting singularity examples:
+https://hpc.nih.gov/training/handouts/170801_singularity_demo.html
 
 # Other useful commands:
 > docker system df
