@@ -8,10 +8,10 @@
 > docker image build -t gvrocha/pyml_containers:pytorch1.9-esm -f ./py3-pytorch1.9-esm/Dockerfile .
 
 # List local images: 
-> docker container ls
+> docker image ls
 
 # List all local images: 
-> docker container ls -a
+> docker image ls -a
 
 # List local containers: 
 > docker container ls
@@ -31,6 +31,9 @@
 
 # Build a Singularity image from Docker hub
 singularity build /users/gvrocha/containers/pytorch1.9-esm.simg docker://gvrocha/pyml_containers:pytorch1.9-esm
+
+# Once Singularity image is built
+singularity run --containall -B /a_host_directory:/path_to_host_directory_in_container /users/gvrocha/containers/pytorch1.9-esm.simg 
 
 # Other useful commands:
 > docker system df
