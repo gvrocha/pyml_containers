@@ -46,3 +46,10 @@ https://hpc.nih.gov/training/handouts/170801_singularity_demo.html
 
 # Discard unused files:
 > docker image prune
+
+# Login to docker on local machine (so can push automatically):
+docker login # will prompt for username and password
+docker login -u "myusername" -p "mypassword"
+docker logout # to logout from current user
+docker info # tells which login is currently in use; look for Username in output
+See also: docker help login
