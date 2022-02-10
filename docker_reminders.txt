@@ -53,3 +53,9 @@ docker login -u "myusername" -p "mypassword"
 docker logout # to logout from current user
 docker info # tells which login is currently in use; look for Username in output
 See also: docker help login
+
+# First time git setup
+See https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
+git config -l
+git config --global user.name "username"
+git config --global user.email "username@mycoolserver.com"
